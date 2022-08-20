@@ -11,8 +11,6 @@ _logger = logging.getLogger(__name__)
 
 @as_declarative()
 class Base(object):
-    __table_args__ = {"schema": config.db_schema}
-
     @declared_attr
     def __tablename__(cls: Any) -> str:
         """Takes the name of the Class with CamelCase and converts it into snake_case. This means we
@@ -29,14 +27,14 @@ class Employees(Base):
     date_of_birth = Column(DateTime)
 
 class CakePreferences(Base):
-    name = Column(String, ForeignKey(f"{config.db_schema}.employees.name"), primary_key=True)
+    name = Column(String, ForeignKey(f"employees.name"), primary_key=True)
     food_intolerence = Column(String)
     cake_preference = Column(String)
     can_bake = Column(Boolean)
     can_provide_ingredients = Column(String)
     
-def create_db_engine(name:str = config.db_name)->Engine:
-    engine = create_engine(f"sqlite:///{name}.db", echo=True)
+def create_db_engine()->Engine:
+    engine = create_engine(f"sqlite:///{config.db_name}.db", echo=True)
     return engine
 
 def create_db_schema(engine:Engine):
