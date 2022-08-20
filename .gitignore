@@ -192,3 +192,4 @@ cython_debug/
 
 # Custom folders ignored
 .venv
+untracked/
