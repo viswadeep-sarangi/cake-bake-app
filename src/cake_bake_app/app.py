@@ -22,7 +22,7 @@ app = create_app()
 
 @app.get("/")
 async def redirect_html():
-    return RedirectResponse(url="/html/test")
+    return RedirectResponse(url="/html/add_employee")
 
 @app.on_event("startup")
 async def startup_event() -> None:

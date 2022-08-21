@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        Add Employee Submission Form
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- <form action="/ping/form" method="post" name="myForm"> -->
+        <form id="myForm">
+            <label for="empname">Employee name:</label><br>
+            <input type="text" id="empname" name="name"><br>
+            <label for="dob">Date of Birth:</label><br>
+            <input type="datetime-local" id="dob" name="date_of_birth"><br><br>
+            <!-- <input type="button" value="Submit" onclick="submitForm()"> -->
+            <input type="submit" value="Submit">
+        </form>
+        <p id="results">Results</p>
+        <script>
+            // function submitForm(){                
+            //     var formData = JSON.stringify($("#myForm").serializeArray());
+            //     console.log(formData)
+            //     var formJson = {}
+            //     jQuery.each( formData, function( i, field ) {
+            //         console.log(field.name);                   
+            //         console.log(field.value);
+            //         console.log()
+            //         formJson[field.name]=field.value
+            //     });
+            $( "form" ).submit(function( event ) {
+                var formData= $( this ).serializeArray();                
+                event.preventDefault();
+                console.log(formData);
+                var formJson = {}
+                jQuery.each( formData, function( i, field ) {
+                    console.log(field.name);                   
+                    console.log(field.value);
+                    console.log()
+                    formJson[field.name]=field.value
+                });
+            
+                var formJsonString = JSON.stringify(formJson)
+                $("#results").text(formJsonString);
+                console.log(formJsonString);
+                $.ajax({
+                    type: "POST",
+                    url: "/ping/form",
+                    data: formJsonString,
+                    success: function(){},
+                    dataType: "json",
+                    contentType : "application/json"
+                });
+            });
+            // }
+        </script>
+    </body>
+</html>
