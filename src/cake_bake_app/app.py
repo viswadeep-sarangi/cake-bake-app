@@ -11,7 +11,7 @@ def create_app() -> FastAPI:
 
     _logger.info("Registering API routers...")
     app.include_router(ping.router, prefix="/ping", tags=["ping"])
-    app.include_router(api.router, prefix="/cake", tags=["ping"])
+    app.include_router(api.router, prefix="/cake", tags=["cake"])
 
     return app
 

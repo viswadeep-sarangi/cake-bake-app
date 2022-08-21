@@ -7,6 +7,7 @@ authors = ["Viswadeep Sarangi <viswadeep.sarangi@gmail.com>"]
 [tool.poetry.dependencies]
 python = "3.8"
 SQLAlchemy = "^1.4.40"
+SQLAlchemy-Utils = "*"
 fastapi = "^0.79.1"
 pandas = "^1.4.3"
 numpy = "^1.23.2"
