@@ -1,8 +1,9 @@
 import logging
 from fastapi import FastAPI
-from . import ping
-_logger = logging.getLogger(__name__)
+from cake_bake_app import ping
+from cake_bake_app import api
 
+_logger = logging.getLogger(__name__)
 
 def create_app() -> FastAPI:
     _logger.info("Initialising app...")
@@ -10,9 +11,9 @@ def create_app() -> FastAPI:
 
     _logger.info("Registering API routers...")
     app.include_router(ping.router, prefix="/ping", tags=["ping"])
+    app.include_router(api.router, prefix="/cake", tags=["ping"])
 
     return app
-
 
 app = create_app()
 

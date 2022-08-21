@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./src/cake_bake_app"
+    ]
+}
