@@ -1,4 +1,5 @@
 
+from datetime import datetime
 from sqlalchemy import Column, String, Table, DateTime, ForeignKey, Boolean
 from typing import Dict
 from pydantic import BaseModel
@@ -34,6 +35,10 @@ class CakePreferences(Base):
     can_bake = Column(Boolean)
     can_provide_ingredients = Column(Boolean)
         
+class EmployeesModel(BaseModel):
+    name:str
+    date_of_birth:datetime
+
 class CakePreferencesModel(BaseModel):
     name:str
     food_intolerence:str
