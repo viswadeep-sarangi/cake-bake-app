@@ -35,6 +35,12 @@ class CakePreferences(Base):
     can_bake = Column(Boolean)
     can_provide_ingredients = Column(Boolean)
         
+
+class CakeResponsibilities(Base):
+    cake_receiver_name = Column(String, ForeignKey(f"employees.name"), primary_key=True)
+    baker_name = Column(String, ForeignKey(f"employees.name"))
+    ingredients_provider_name = Column(String, ForeignKey(f"employees.name"))
+
 class EmployeesModel(BaseModel):
     name:str
     date_of_birth:datetime
@@ -45,3 +51,8 @@ class CakePreferencesModel(BaseModel):
     cake_preference:str
     can_bake:bool
     can_provide_ingredients:bool
+
+class CakeResponsibilitiesModel(BaseModel):
+    cake_receiver_name:str
+    baker_name:str
+    ingredients_provider_name:str

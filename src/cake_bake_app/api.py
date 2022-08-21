@@ -2,8 +2,8 @@
 from typing import Dict, List
 from fastapi import APIRouter, Depends
 
-from cake_bake_app.model import CakePreferencesModel, Employees, EmployeesModel
-from cake_bake_app.model import CakePreferences
+from cake_bake_app.models import CakePreferencesModel, Employees, EmployeesModel
+from cake_bake_app.models import CakePreferences
 from cake_bake_app.db import add_cake_preference_db, add_employee_db, all_cake_preferences_db, get_session
 
 router = APIRouter()

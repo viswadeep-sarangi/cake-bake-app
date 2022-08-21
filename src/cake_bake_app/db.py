@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session, sessionmaker
 from cake_bake_app.config import config
 import logging
 from sqlalchemy import create_engine, event
-from cake_bake_app.model import Base, CakePreferencesModel, CakePreferences, Employees
+from cake_bake_app.models import Base, CakePreferencesModel, CakePreferences, Employees
 
 _logger = logging.getLogger(__name__)
 
