@@ -3,7 +3,7 @@ from http.client import HTTPException
 from typing import List
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session, sessionmaker
-from config import config
+from cake_bake_app.config import config
 import logging
 from sqlalchemy import create_engine, event
 from cake_bake_app.model import Base, CakePreferencesModel, CakePreferences, Employees

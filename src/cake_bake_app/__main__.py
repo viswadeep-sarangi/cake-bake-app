@@ -1,5 +1,5 @@
 import uvicorn
-from config import config
+from cake_bake_app.config import config
 import logging
 
 _logger = logging.getLogger(__name__)
