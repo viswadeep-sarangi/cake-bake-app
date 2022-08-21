@@ -19,16 +19,20 @@ class Base(object):
         """
         return re.sub("(?!^)([A-Z]+)", r"_\1", cls.__name__).lower()
 
-class EmployeesOrm(Base):
+    # @declared_attr
+    # def as_dict(cls:Any) -> Dict[str,str]:
+    #    return {c.name: getattr(cls, c.name) for c in cls.__table__.columns}
+
+class Employees(Base):
     name = Column(String, primary_key=True)
     date_of_birth = Column(DateTime)
 
-class CakePreferencesOrm(Base):
+class CakePreferences(Base):
     name = Column(String, ForeignKey(f"employees.name"), primary_key=True)
     food_intolerence = Column(String)
     cake_preference = Column(String)
     can_bake = Column(Boolean)
-    can_provide_ingredients = Column(String)
+    can_provide_ingredients = Column(Boolean)
         
 class CakePreferencesModel(BaseModel):
     name:str

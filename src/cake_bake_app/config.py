@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     api_port:int
     api_host:str
     api_worker_count:int = 4
+    db_check_same_thread:bool = False
 
     class Config:
             env_file = '.env'
