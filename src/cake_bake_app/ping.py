@@ -13,7 +13,6 @@ async def test() -> Dict[str, str]:
 @router.post("/form", summary="Test endpoint for form")
 async def test_form(request:EmployeesModel):
     """Test endpoint for submitting a form"""
-    # _json = await request.json()
     print(request)
     _dict = dict(request)
     return {"json":_dict}
