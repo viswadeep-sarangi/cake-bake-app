@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Get cake responsibility</h1>
+        <br>
+        <label for="empname">Employee name:</label><br>
+        <input type="text" id="empname" name="name"><br>
+        <br><br><br>
+        <button onclick="btnclick()" value="Get Cake Responsibility">Get Cake Responsibility</button>
+        <script>
+            function btnclick(){
+                var empname = {'name':$("#empname").val()};
+                $.ajax({
+                    type: "POST",
+                    url: '/html/show_cake_responsibility',
+                    data: JSON.stringify(empname),
+                    success: function(respStr){
+                        console.log(respStr);
+                        document.write(respStr);
+                    },
+                    contentType : "application/json"
+                });
+            }
+        </script>
+        <br><br><br>
+        <form id='prevform' action="/html/submit_preference">
+            <input type="submit" value="Back to Submit Cake Preference" />
+        </form>
+           

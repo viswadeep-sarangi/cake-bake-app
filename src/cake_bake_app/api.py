@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Request
 
 from cake_bake_app.models import CakePreferencesModel, EmployeeRequestModel, Employees, EmployeesModel
 from cake_bake_app.models import CakePreferences
-from cake_bake_app.db import add_cake_preference_db, add_employee_db, all_cake_preferences_db, all_cake_responsibilities_db, get_cake_preference_db, get_session
+from cake_bake_app.db import add_cake_preference_db, add_employee_db, all_cake_preferences_db, all_cake_responsibilities_db, get_all_employees_db, get_cake_preference_db, get_session
 
 router = APIRouter()
 
@@ -14,6 +14,10 @@ async def add_employee(request_body:EmployeesModel, session=Depends(get_session)
     employee_orm = Employees(**dict(request_body))
     employee_orm = add_employee_db(employee=employee_orm, session=session)
     return {"message":f"{request_body.name} added to database   {employee_orm.as_dict()}"}
+
+@router.get("/employees", summary="Get all employees")
+def all_employees(session=Depends(get_session)):
+    return get_all_employees_db(session)
 
 @router.post("/submit_preferences", summary="Submit cake preferences")
 async def submit_preferences(request_body:CakePreferencesModel, session=Depends(get_session)):

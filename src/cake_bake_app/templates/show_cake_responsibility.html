@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Showing cake responsibility</h1>
+        <br>
+        <label for="empname">Baker name:</label><br>
+        <h3 id="empname">{{baker_name}}</h3>
+        <br>
+        <label for="receiver">Baking for:</label><br>
+        <h3 id="receiver">
+            {{cake_receiver}}
+        </h3>
+        <br><br><br>
+        <form id='prevform' action="/html/submit_preference">
+            <input type="submit" value="Back to Submit Cake Preference" />
+        </form>
+        <br><br><br>
+        <form id='prevform' action="/html/add_employee">
+            <input type="submit" value="Back to Add Employee" />
+        </form>
+    </body>
+</html>

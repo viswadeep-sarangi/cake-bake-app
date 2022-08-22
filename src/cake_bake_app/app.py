@@ -4,6 +4,8 @@ from cake_bake_app import ping
 from cake_bake_app import api
 from cake_bake_app import html
 from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
+from cake_bake_app import templates_dir
 
 _logger = logging.getLogger(__name__)
 
@@ -19,6 +21,7 @@ def create_app() -> FastAPI:
     return app
 
 app = create_app()
+app.mount("/html/static", StaticFiles(directory=templates_dir), name="static")
 
 @app.get("/")
 async def redirect_html():

@@ -31,14 +31,11 @@ class CakePreferences(Base):
     name = Column(String, ForeignKey(Employees.name), primary_key=True)
     food_intolerence = Column(String)
     cake_preference = Column(String)
-    # can_bake = Column(Boolean)
-    # can_provide_ingredients = Column(Boolean)
         
 
 class CakeResponsibilities(Base):    
     baker_name = Column(String, ForeignKey(Employees.name), primary_key=True)
     cake_receiver_name = Column(String, ForeignKey(Employees.name))
-    # ingredients_provider_name = Column(String, ForeignKey(Employees.name))
 
 class EmployeesModel(BaseModel):
     name:str
@@ -48,13 +45,10 @@ class CakePreferencesModel(BaseModel):
     name:str
     food_intolerence:str
     cake_preference:str
-    # can_bake:bool
-    # can_provide_ingredients:bool
 
 class CakeResponsibilitiesModel(BaseModel):
     baker_name:str
     cake_receiver_name:str
-    # ingredients_provider_name:str
 
 class EmployeeRequestModel(BaseModel):
     name:str
