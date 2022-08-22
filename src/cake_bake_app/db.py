@@ -39,6 +39,9 @@ def add_employee_db(employee:Employees, session:Session)->Employees:
 def get_all_employees_db(session:Session)->List[Employees]:
     return session.query(Employees).all()
 
+def get_employee(name:str, session:Session)->Employees:
+    return session.query(Employees).filter(Employees.name==name).first()
+
 def get_cake_preference_db(name:str, session:Session)->CakePreferences:
     cake_pref = session.query(CakePreferences).filter(CakePreferences.name==name).first()
     return cake_pref
