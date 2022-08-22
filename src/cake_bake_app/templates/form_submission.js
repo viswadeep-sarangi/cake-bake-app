@@ -1,4 +1,4 @@
-function formSubmit(formName, postURL, resultsTag){
+function formSubmit(formName, postURL){
     var formData= $(formName).serializeArray();
     console.log(formData);
     var formJson = {}
@@ -10,7 +10,6 @@ function formSubmit(formName, postURL, resultsTag){
     });
 
     var formJsonString = JSON.stringify(formJson)
-    $(resultsTag).text(formJsonString);
     console.log(formJsonString);
     $.ajax({
         type: "POST",

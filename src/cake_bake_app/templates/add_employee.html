@@ -8,7 +8,7 @@
         <h1>Add Employee Submission Form</h1>
         <br>
         <script src="static/form_submission.js"></script>
-        <form id='myform' onsubmit="formSubmit('#myform','/cake/add_employee','#results')">
+        <form id='myform' onsubmit="formSubmit('#myform','/cake/add_employee')">
             <label for="empname">Employee name:</label><br>
             <input type="text" id="empname" name="name"><br>
             <label for="dob">Date of Birth:</label><br>
@@ -27,6 +27,5 @@
         <form id='nextform' action="/html/submit_preference">
             <input type="submit" value="Go to Submit Cake Preference" />
         </form>
-        <p id="results">Results</p>
     </body>
 </html>
