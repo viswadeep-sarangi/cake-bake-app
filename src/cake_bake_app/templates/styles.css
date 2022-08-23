@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: medium;
+    margin: 1cm;
+}
+
+input[type=text],input[type=datetime-local]{
+    border-radius: 5px;
+}
+
+button,input[type=submit]{
+    color: white;
+    margin-top: 20px;
+    background: #56b1eb;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.5s;
+  }

@@ -2,9 +2,10 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>        
     </head>
     <body>
+        <link rel="stylesheet" href="static/styles.css">
         <h1>Get cake responsibility</h1>
         <br>
         <label for="empname">Employee name:</label><br>
@@ -20,7 +21,7 @@
                     data: JSON.stringify(empname),
                     success: function(respStr){
                         console.log(respStr);
-                        document.write(respStr);
+                        document.getele
                     },
                     contentType : "application/json"
                 });

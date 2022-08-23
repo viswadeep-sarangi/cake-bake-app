@@ -83,7 +83,7 @@ def all_cake_responsibilities_db(session:Session)->Union[List[CakeResponsibiliti
     return cake_resps
 
 
-def get_cake_responsibility_db(name:str, session:Session) ->CakeResponsibilities:
+def get_cake_responsibility_db(name:str, session:Session) ->Union[CakeResponsibilities,Dict]:
     (all_done, names) = names_if_all_preferences_submitted(session)
     if not all_done:
         return {"message":"All employees have not yet submitted their preferences. Please check back later. "

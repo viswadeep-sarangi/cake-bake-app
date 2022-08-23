@@ -2,15 +2,16 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>        
     </head>
     <body>
-        <h1>Add Employee Submission Form</h1>
+        <link rel="stylesheet" href="static/styles.css">
+        <h1>Submit Cake Preferences Form</h1>
         <br>
         <script src="static/form_submission.js"></script>
         <form id='myform' onsubmit="formSubmit('#myform','/cake/submit_preferences','#results')">
             <label for="empname">Employee name:</label><br>
-            <input type="text" id="empname" name="name"><br>
+            <input type="text" id="empname" name="name"><br><br>
             <label for="food">Food intolerences (e.g. gluten, egg, milk):</label><br>
             <input type="text" id="food" name="food_intolerence"><br><br>
             <label for="cake">Cake preferences (e.g. chocolate, red velvet, lemon):</label><br>
