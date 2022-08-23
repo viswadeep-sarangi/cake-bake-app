@@ -18,6 +18,7 @@ pip install --upgrade pip poetry
 poetry install
 ```
 - Ensure that the default environment values set in the `.env` file are appropriate to the usecase
+- To create and pre-populate the database, run `pytest` in the terminal
 - To run the server
     - Run the `__main__.py` file (e.g. `python3 __main__.py`), or
     - Execute the following command in the terminal `poetry run cake-bake-app`
