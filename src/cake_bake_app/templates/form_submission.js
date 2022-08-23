@@ -3,7 +3,7 @@ function formSubmit(formName, postURL){
     console.log(formData);
     var formJson = {}
     jQuery.each( formData, function( i, field ) {
-        console.log(field.name);                   
+        console.log(field.name);
         console.log(field.value);
         console.log()
         formJson[field.name]=field.value

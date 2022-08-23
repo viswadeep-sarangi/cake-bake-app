@@ -1,4 +1,3 @@
-
 from datetime import datetime
 from sqlalchemy import Column, String, Table, DateTime, ForeignKey, Boolean
 from typing import Dict
@@ -6,6 +5,7 @@ from pydantic import BaseModel
 import re
 from typing import Any
 from sqlalchemy.ext.declarative import as_declarative, declared_attr
+
 
 @as_declarative()
 class Base(object):
@@ -23,32 +23,38 @@ class Base(object):
     def as_dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
+
 class Employees(Base):
     name = Column(String, primary_key=True)
     date_of_birth = Column(DateTime)
+
 
 class CakePreferences(Base):
     name = Column(String, ForeignKey(Employees.name), primary_key=True)
     food_intolerence = Column(String)
     cake_preference = Column(String)
-        
 
-class CakeResponsibilities(Base):    
+
+class CakeResponsibilities(Base):
     baker_name = Column(String, ForeignKey(Employees.name), primary_key=True)
     cake_receiver_name = Column(String, ForeignKey(Employees.name))
 
+
 class EmployeesModel(BaseModel):
-    name:str
-    date_of_birth:datetime
+    name: str
+    date_of_birth: datetime
+
 
 class CakePreferencesModel(BaseModel):
-    name:str
-    food_intolerence:str
-    cake_preference:str
+    name: str
+    food_intolerence: str
+    cake_preference: str
+
 
 class CakeResponsibilitiesModel(BaseModel):
-    baker_name:str
-    cake_receiver_name:str
+    baker_name: str
+    cake_receiver_name: str
+
 
 class EmployeeRequestModel(BaseModel):
-    name:str
+    name: str

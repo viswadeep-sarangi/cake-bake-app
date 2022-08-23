@@ -9,6 +9,7 @@ from cake_bake_app import templates_dir
 
 _logger = logging.getLogger(__name__)
 
+
 def create_app() -> FastAPI:
     _logger.info("Initialising app...")
     app = FastAPI(title="Cake Bake App")
@@ -20,12 +21,15 @@ def create_app() -> FastAPI:
 
     return app
 
+
 app = create_app()
 app.mount("/html/static", StaticFiles(directory=templates_dir), name="static")
+
 
 @app.get("/")
 async def redirect_html():
     return RedirectResponse(url="/html/add_employee")
+
 
 @app.on_event("startup")
 async def startup_event() -> None:
