@@ -9,7 +9,7 @@ Build an app for a small company. The company would like its employees to bake a
 - Clone the repository
 - This repository assumes the following
     - The computer is running Linux OS
-    - Python 3.8 is already installed on the computer
+    - Python 3.8 (or higher) is already installed on the computer
 - Run the following commands to setup the working environment
 ```
 virtualenv .venv
@@ -20,7 +20,7 @@ poetry install
 - Ensure that the default environment values set in the `.env` file are appropriate to the usecase
 - To create and pre-populate the database, run `pytest` in the terminal
 - To run the server
-    - Run the `__main__.py` file (e.g. `python3 __main__.py`), or
-    - Execute the following command in the terminal `poetry run cake-bake-app`
+    - Execute the following command in the terminal `poetry run cake-bake-app`, or
+    - Run the `__main__.py` file (e.g. `python3 __main__.py`)
 - The server should be running now
 - The client can be accessed at `localhost:5555` (default) or, at the values set in the `.env` file

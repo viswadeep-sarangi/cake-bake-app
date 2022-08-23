@@ -218,6 +218,7 @@ python-versions = ">=3.8"
 
 [package.dependencies]
 numpy = [
+    {version = ">=1.21.0", markers = "python_version >= \"3.10\""},
     {version = ">=1.20.0", markers = "platform_machine == \"arm64\" and python_version < \"3.10\""},
     {version = ">=1.19.2", markers = "platform_machine == \"aarch64\" and python_version < \"3.10\""},
     {version = ">=1.18.5", markers = "platform_machine != \"aarch64\" and platform_machine != \"arm64\" and python_version < \"3.10\""},
@@ -519,8 +520,8 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 
 [metadata]
 lock-version = "1.1"
-python-versions = "3.8"
-content-hash = "e90dd8f18701403328303d722ddf2d23b598ae483ed12e7c9d4d0e310bd079af"
+python-versions = "^3.8"
+content-hash = "7c08de5644eb0425d778d9e0fc01d6072eec3c125ed0669bbbece4fb9bfe15ca"
 
 [metadata.files]
 anyio = [

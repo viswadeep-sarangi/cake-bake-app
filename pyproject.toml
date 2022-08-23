@@ -5,7 +5,7 @@ description = ""
 authors = ["Viswadeep Sarangi <viswadeep.sarangi@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "3.8"
+python = "^3.8"
 SQLAlchemy = "^1.4.40"
 SQLAlchemy-Utils = "*"
 fastapi = "^0.79.1"
