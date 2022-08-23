@@ -15,6 +15,7 @@ Build an app for a small company. The company would like its employees to bake a
 virtualenv .venv
 source .venv/bin/activate
 pip install --upgrade pip poetry
+poetry update
 poetry install
 ```
 - Ensure that the default environment values set in the `.env` file are appropriate to the usecase

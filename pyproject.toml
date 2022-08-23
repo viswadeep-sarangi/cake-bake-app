@@ -7,14 +7,14 @@ authors = ["Viswadeep Sarangi <viswadeep.sarangi@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 SQLAlchemy = "^1.4.40"
-SQLAlchemy-Utils = "*"
+SQLAlchemy-Utils = "0.38.*"
 fastapi = "^0.79.1"
 pandas = "^1.4.3"
 numpy = "^1.23.2"
-python-dotenv="*"
+python-dotenv="0.20.*"
 uvicorn = "0.15.*"
 Jinja2 = "3.1.*"
-python-multipart="*"
+python-multipart="^0.0.5"
 
 [tool.poetry.dev-dependencies]
 pytest="*"
