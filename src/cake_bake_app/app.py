@@ -28,7 +28,7 @@ app.mount("/html/static", StaticFiles(directory=templates_dir), name="static")
 
 @app.get("/")
 async def redirect_html():
-    return RedirectResponse(url="/html/add_employee")
+    return RedirectResponse(url="/html/home")
 
 
 @app.on_event("startup")

@@ -6,7 +6,7 @@ from cake_bake_app import templates_dir
 from datetime import datetime
 
 report_template_fs = jj.Environment(loader=jj.FileSystemLoader(templates_dir))
-test_template = report_template_fs.get_template("test.html")
+home_template = report_template_fs.get_template("home_page.html")
 add_employee_template = report_template_fs.get_template("add_employee.html")
 submit_preference_template = report_template_fs.get_template("submit_preferences.html")
 cake_resp_template = report_template_fs.get_template("cake_responsibility.html")
@@ -15,9 +15,9 @@ show_cake_resp_template = report_template_fs.get_template(
 )
 
 
-def generate_test_html_response():
+def generate_home_html_response():
     template_vars = {"timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
-    html_content = test_template.render(template_vars)
+    html_content = home_template.render(template_vars)
     return HTMLResponse(content=html_content, status_code=200)
 
 

@@ -5,7 +5,7 @@ from fastapi.responses import HTMLResponse
 from cake_bake_app.template import (
     generate_add_employee_template,
     generate_show_cake_responsibility_template,
-    generate_test_html_response,
+    generate_home_html_response,
     generate_submit_preference_template,
 )
 from cake_bake_app.template import generate_cake_responsibility_template
@@ -27,9 +27,9 @@ from fastapi.exceptions import HTTPException
 router = APIRouter()
 
 
-@router.get("/test", summary="HTML test endpoint", response_class=HTMLResponse)
-async def test() -> HTMLResponse:
-    return generate_test_html_response()
+@router.get("/home", summary="HTML test endpoint", response_class=HTMLResponse)
+async def homw_page() -> HTMLResponse:
+    return generate_home_html_response()
 
 
 @router.get(
