@@ -6,6 +6,9 @@ import random
 from cake_bake_app.models import EmployeesModel, CakePreferencesModel
 from fastapi.testclient import TestClient
 from cake_bake_app.app import app
+from cake_bake_app.db import create_database_if_not_exists
+
+create_database_if_not_exists()
 
 client = TestClient(app)
 
