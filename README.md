@@ -22,6 +22,6 @@ poetry install
 - To create and pre-populate the database, run `pytest` in the terminal
 - To run the server
     - Execute the following command in the terminal `poetry run cake-bake-app`, or
-    - Run the `__main__.py` file (e.g. `python3 __main__.py`)
+    - Run the `__main__.py` file (e.g. `python3 src/cake_bake_app/__main__.py`)
 - The server should be running now
 - The client can be accessed at `localhost:5555` (default) or, at the values set in the `.env` file
