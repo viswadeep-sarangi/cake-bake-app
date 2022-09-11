@@ -1,5 +1,7 @@
 # cake-bake-app
 
+This was a fun weekend project, created as part of an interview process. It's an end-to-end API based client-server solution, created in Python, Jinja, HTML
+
 ### Problem statement
 ---
 Build an app for a small company. The company would like its employees to bake a cake for each other on their birthdays. Write a client and a server app to do so. Server is a REST API server, and client would run various scenarios that the candidate thinks would typically happen.   The server should be python using fastapi, sqlite and sqlalchemy. Client can be in a medium of choice
